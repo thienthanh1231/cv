@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV & Portfolio | Nguyễn Trần Thiện Thanh</title>
+    <meta
+      name="description"
+      content="Trang CV và portfolio cá nhân của Nguyễn Trần Thiện Thanh - Web Developer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="hero" id="top">
+      <nav class="nav container glass" data-animate>
+        <a class="logo" href="#top">NT.</a>
+        <button class="menu-toggle" aria-label="Mở menu">☰</button>
+        <ul class="menu">
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content container">
+        <div class="hero-text" data-animate>
+          <p class="tag">Web Developer • UI Enthusiast</p>
+          <h1>Xin chào, mình là <span>Nguyễn Thanh</span></h1>
+          <p class="lead">
+            Mình xây dựng các website hiện đại, tối ưu tốc độ và tập trung vào
+            trải nghiệm người dùng.
+          </p>
+          <div class="cta-group">
+            <a class="btn primary" href="#projects">Xem portfolio</a>
+            <a class="btn ghost" href="#contact">Liên hệ ngay</a>
+          </div>
+        </div>
+        <div class="card profile-card" data-animate>
+          <h2>Thông tin nhanh</h2>
+          <ul>
+            <li><strong>Vị trí:</strong> Front-end Developer</li>
+            <li><strong>Kinh nghiệm:</strong> 2+ năm</li>
+            <li><strong>Email:</strong> hello.nguyenthanh@example.com</li>
+            <li><strong>Địa điểm:</strong> TP. Hồ Chí Minh</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="about">
+        <h2 data-animate>Giới thiệu bản thân</h2>
+        <p data-animate>
+          Mình là lập trình viên web đam mê tạo ra sản phẩm chỉn chu từ giao diện
+          đến hiệu năng. Mình yêu thích việc giải quyết vấn đề, làm việc nhóm và
+          liên tục cập nhật công nghệ mới.
+        </p>
+      </section>
+
+      <section class="section alt" id="skills">
+        <div class="container">
+          <h2 data-animate>Kỹ năng nổi bật</h2>
+          <div class="grid skills-grid">
+            <article class="card" data-animate>
+              <h3>Front-end</h3>
+              <p>HTML, CSS, JavaScript, React, Next.js, Tailwind CSS</p>
+            </article>
+            <article class="card" data-animate>
+              <h3>Back-end</h3>
+              <p>Node.js, Express, REST API, Firebase, Supabase</p>
+            </article>
+            <article class="card" data-animate>
+              <h3>Công cụ</h3>
+              <p>Git, GitHub, Figma, Vite, Postman, CI/CD cơ bản</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="projects">
+        <h2 data-animate>Dự án tiêu biểu</h2>
+        <div class="grid project-grid">
+          <article class="card project-card" data-animate>
+            <h3>TaskFlow App</h3>
+            <p>
+              Ứng dụng quản lý công việc với giao diện kéo thả, realtime sync và
+              dark mode.
+            </p>
+            <a href="#" aria-label="Xem dự án TaskFlow">Xem chi tiết →</a>
+          </article>
+          <article class="card project-card" data-animate>
+            <h3>Food Landing Page</h3>
+            <p>
+              Landing page cho thương hiệu đồ ăn nhanh, tập trung tối ưu chuyển
+              đổi trên mobile.
+            </p>
+            <a href="#" aria-label="Xem dự án Food Landing">Xem chi tiết →</a>
+          </article>
+          <article class="card project-card" data-animate>
+            <h3>Portfolio Studio</h3>
+            <p>
+              Website portfolio cá nhân tối ưu SEO, tích hợp biểu mẫu liên hệ và
+              blog markdown.
+            </p>
+            <a href="#" aria-label="Xem dự án Portfolio Studio">Xem chi tiết →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="contact">
+        <div class="container contact">
+          <div data-animate>
+            <h2>Liên hệ</h2>
+            <p>
+              Bạn đang cần một website chuyên nghiệp cho cá nhân hoặc doanh
+              nghiệp? Hãy gửi thông tin, mình sẽ phản hồi sớm.
+            </p>
+          </div>
+          <form class="card contact-form" id="contactForm" data-animate>
+            <label>
+              Họ và tên
+              <input type="text" name="name" placeholder="Nguyễn Văn A" required />
+            </label>
+            <label>
+              Email
+              <input
+                type="email"
+                name="email"
+                placeholder="email@example.com"
+                required
+              />
+            </label>
+            <label>
+              Nội dung
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Mình muốn tư vấn thiết kế website..."
+                required
+              ></textarea>
+            </label>
+            <button type="submit" class="btn primary">Gửi liên hệ</button>
+            <p class="form-note" id="formNote" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" data-animate>
+      <p>© 2026 Nguyễn Thanh. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
