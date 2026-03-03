@@ -265,12 +265,17 @@ textarea:focus {
 }
 
 [data-animate] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js [data-animate] {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
-[data-animate].in-view {
+.js [data-animate].in-view {
   opacity: 1;
   transform: translateY(0);
 }
