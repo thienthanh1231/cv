@@ -1,3 +1,4 @@
+```css
 :root {
   --bg: #0f172a;
   --card: #1f2937;
@@ -10,6 +11,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -17,7 +20,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: "Inter", sans-serif;
   background: radial-gradient(circle at top right, #1e293b 0%, #020617 46%, #020617 100%);
   color: var(--text);
@@ -26,6 +28,14 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== IMAGE ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== BACKGROUND ORB ===== */
 .bg-orb {
   position: fixed;
   width: 320px;
@@ -50,19 +60,22 @@ body {
   animation-delay: -4s;
 }
 
+/* ===== CONTAINER ===== */
 .container {
-  width: min(var(--max-width), 92%);
+  width: min(var(--max-width), 94%);
   margin: 0 auto;
 }
 
+/* ===== GLASS EFFECT ===== */
 .glass {
   backdrop-filter: blur(8px);
   background: rgba(15, 23, 42, 0.45);
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 14px;
-  padding: 0.45rem 1rem;
+  padding: 0.6rem 1rem;
 }
 
+/* ===== HERO ===== */
 .hero {
   padding: 1rem 0 5rem;
 }
@@ -85,11 +98,11 @@ body {
   letter-spacing: 0.03em;
 }
 
+/* ===== MENU ===== */
 .menu {
   display: flex;
   list-style: none;
   gap: 1.2rem;
-  padding: 0;
 }
 
 .menu a {
@@ -110,8 +123,10 @@ body {
   color: var(--text);
   border-radius: 8px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
+/* ===== HERO CONTENT ===== */
 .hero-content {
   margin-top: 3rem;
   display: grid;
@@ -132,7 +147,7 @@ body {
 
 h1 {
   font-size: clamp(2rem, 4vw, 3.4rem);
-  margin: 0;
+  margin-bottom: 1rem;
 }
 
 h1 span {
@@ -142,8 +157,10 @@ h1 span {
 .lead {
   color: var(--muted);
   max-width: 58ch;
+  margin-bottom: 1rem;
 }
 
+/* ===== SECTION ===== */
 .section {
   padding: 4rem 0;
 }
@@ -152,6 +169,7 @@ h1 span {
   background: rgba(17, 24, 39, 0.58);
 }
 
+/* ===== GRID ===== */
 .grid {
   display: grid;
   gap: 1.2rem;
@@ -162,12 +180,19 @@ h1 span {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* ===== CARD ===== */
 .card {
-  background: linear-gradient(160deg, rgba(31, 41, 55, 0.86), rgba(15, 23, 42, 0.72));
+  background: linear-gradient(
+    160deg,
+    rgba(31, 41, 55, 0.86),
+    rgba(15, 23, 42, 0.72)
+  );
   border: 1px solid #334155;
   border-radius: 16px;
   padding: 1.2rem;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  transition: transform 0.28s ease,
+              box-shadow 0.28s ease,
+              border-color 0.28s ease;
 }
 
 .card:hover {
@@ -176,6 +201,7 @@ h1 span {
   border-color: rgba(34, 211, 238, 0.45);
 }
 
+/* ===== BUTTON ===== */
 .cta-group {
   margin-top: 1.25rem;
   display: flex;
@@ -184,13 +210,14 @@ h1 span {
 }
 
 .btn {
-  padding: 0.65rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.22s ease,
+              box-shadow 0.22s ease;
 }
 
 .btn:hover {
@@ -212,12 +239,14 @@ h1 span {
   color: var(--text);
 }
 
+/* ===== PROJECT ===== */
 .project-card a {
   color: var(--primary);
   text-decoration: none;
   font-weight: 600;
 }
 
+/* ===== CONTACT ===== */
 .contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -240,7 +269,8 @@ textarea {
   border-radius: 10px;
   color: var(--text);
   padding: 0.7rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
 input:focus,
@@ -250,6 +280,10 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
 }
 
+textarea {
+  min-height: 120px;
+}
+
 .form-note {
   min-height: 1.3rem;
   margin-top: 0.5rem;
@@ -257,6 +291,7 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
+/* ===== FOOTER ===== */
 .footer {
   text-align: center;
   color: var(--muted);
@@ -264,6 +299,7 @@ textarea:focus {
   border-top: 1px solid #1e293b;
 }
 
+/* ===== ANIMATION ===== */
 [data-animate] {
   opacity: 1;
   transform: translateY(0);
@@ -272,7 +308,8 @@ textarea:focus {
 .js [data-animate] {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition: opacity 0.65s ease,
+              transform 0.65s ease;
 }
 
 .js [data-animate].in-view {
@@ -280,11 +317,12 @@ textarea:focus {
   transform: translateY(0);
 }
 
+/* ===== KEYFRAMES ===== */
 @keyframes float {
-  0%,
-  100% {
+  0%,100% {
     transform: translate(0, 0) scale(1);
   }
+
   50% {
     transform: translate(28px, -18px) scale(1.07);
   }
@@ -295,18 +333,33 @@ textarea:focus {
     opacity: 0;
     transform: translateY(22px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* ===== TABLET ===== */
 @media (max-width: 900px) {
+
   .hero-content,
   .skills-grid,
   .project-grid,
   .contact {
     grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .lead {
+    margin: 0 auto 1rem;
+  }
+
+  .cta-group {
+    justify-content: center;
   }
 
   .bg-orb {
@@ -315,21 +368,35 @@ textarea:focus {
   }
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 680px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .hero {
+    padding: 1rem 0 3rem;
+  }
+
+  .nav {
+    top: 0.5rem;
+  }
+
   .menu-toggle {
     display: inline-block;
-    padding: 0.35rem 0.6rem;
+    padding: 0.4rem 0.7rem;
   }
 
   .menu {
     position: absolute;
     top: 3.8rem;
-    right: 4%;
+    right: 0;
     background: #0b1220;
     border: 1px solid #334155;
     border-radius: 10px;
     flex-direction: column;
-    width: 190px;
+    width: 220px;
     padding: 0.75rem;
     display: none;
   }
@@ -337,9 +404,42 @@ textarea:focus {
   .menu.open {
     display: flex;
   }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .glass {
+    padding: 0.7rem 1rem;
+  }
+
+  .bg-orb {
+    opacity: 0.2;
+    filter: blur(90px);
+  }
 }
 
+/* ===== REDUCE MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -348,3 +448,4 @@ textarea:focus {
     scroll-behavior: auto !important;
   }
 }
+```
