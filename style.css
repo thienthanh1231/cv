@@ -1,41 +1,66 @@
+/* =========================================
+   ROOT
+========================================= */
+
 :root {
-  --bg: #0f172a;
-  --card: #1f2937;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+  --bg: #020617;
+  --card: #1e293b;
+
+  --text: #f8fafc;
+  --muted: #94a3b8;
 
   --primary: #22d3ee;
   --primary-dark: #06b6d4;
 
+  --border: rgba(148, 163, 184, 0.16);
+
   --max-width: 1080px;
 }
 
-/* ===== RESET ===== */
+/* =========================================
+   RESET
+========================================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+
   margin: 0;
   padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+
   -webkit-text-size-adjust: 100%;
+
+  color-scheme: dark;
 }
 
 body {
   font-family: "Inter", sans-serif;
 
   background:
-    radial-gradient(circle at top left,
+    radial-gradient(
+      circle at top left,
       rgba(34, 211, 238, 0.12),
-      transparent 28%),
+      transparent 28%
+    ),
 
-    radial-gradient(circle at right center,
-      rgba(168, 85, 247, 0.14),
-      transparent 30%),
+    radial-gradient(
+      circle at right center,
+      rgba(168, 85, 247, 0.12),
+      transparent 30%
+    ),
 
-    linear-gradient(to bottom, #020617, #0f172a);
+    linear-gradient(
+      to bottom,
+      #020617,
+      #0f172a
+    );
+
+  background-color: #020617;
 
   color: var(--text);
 
@@ -44,9 +69,13 @@ body {
   overflow-x: hidden;
 
   position: relative;
+
+  min-height: 100vh;
 }
 
-/* ===== GLOBAL TEXT FIX ===== */
+/* =========================================
+   GLOBAL TEXT FIX
+========================================= */
 
 body,
 h1,
@@ -60,12 +89,15 @@ span,
 a,
 li,
 button,
+label,
 input,
 textarea {
   color: var(--text);
 }
 
-/* ===== IMAGE ===== */
+/* =========================================
+   IMAGE
+========================================= */
 
 img {
   max-width: 100%;
@@ -73,14 +105,19 @@ img {
   display: block;
 }
 
-/* ===== CONTAINER ===== */
+/* =========================================
+   CONTAINER
+========================================= */
 
 .container {
   width: min(var(--max-width), calc(100% - 2rem));
+
   margin-inline: auto;
 }
 
-/* ===== BACKGROUND ORB ===== */
+/* =========================================
+   BACKGROUND ORB
+========================================= */
 
 .bg-orb {
   position: fixed;
@@ -92,9 +129,9 @@ img {
 
   filter: blur(75px);
 
-  z-index: -1;
+  opacity: 0.28;
 
-  opacity: 0.3;
+  z-index: -1;
 
   animation: float 14s ease-in-out infinite;
 }
@@ -115,27 +152,35 @@ img {
   animation-delay: -4s;
 }
 
-/* ===== GLASS ===== */
+/* =========================================
+   GLASS
+========================================= */
 
 .glass {
   backdrop-filter: blur(12px);
 
+  -webkit-backdrop-filter: blur(12px);
+
   background: rgba(15, 23, 42, 0.72);
 
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  border: 1px solid var(--border);
 
-  border-radius: 14px;
+  border-radius: 16px;
 
   padding: 0.7rem 1rem;
 }
 
-/* ===== HERO ===== */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   padding: 1rem 0 5rem;
 }
 
-/* ===== NAV ===== */
+/* =========================================
+   NAVBAR
+========================================= */
 
 .nav {
   position: sticky;
@@ -149,7 +194,7 @@ img {
 
   gap: 1rem;
 
-  z-index: 20;
+  z-index: 100;
 }
 
 .nav.glass {
@@ -168,7 +213,9 @@ img {
   letter-spacing: 0.03em;
 }
 
-/* ===== MENU ===== */
+/* =========================================
+   MENU
+========================================= */
 
 .menu {
   display: flex;
@@ -208,7 +255,9 @@ img {
   cursor: pointer;
 }
 
-/* ===== HERO CONTENT ===== */
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
   margin-top: 3rem;
@@ -254,7 +303,9 @@ h1 span {
   font-size: 1.02rem;
 }
 
-/* ===== SECTION ===== */
+/* =========================================
+   SECTION
+========================================= */
 
 .section {
   padding: 4rem 0;
@@ -264,7 +315,9 @@ h1 span {
   background: rgba(17, 24, 39, 0.58);
 }
 
-/* ===== GRID ===== */
+/* =========================================
+   GRID
+========================================= */
 
 .grid {
   display: grid;
@@ -277,17 +330,19 @@ h1 span {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* ===== CARD ===== */
+/* =========================================
+   CARD
+========================================= */
 
 .card {
   background:
     linear-gradient(
       160deg,
-      rgba(30, 41, 59, 0.95),
-      rgba(15, 23, 42, 0.88)
+      rgba(30, 41, 59, 0.96),
+      rgba(15, 23, 42, 0.9)
     );
 
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  border: 1px solid var(--border);
 
   border-radius: 16px;
 
@@ -307,12 +362,22 @@ h1 span {
   border-color: rgba(34, 211, 238, 0.45);
 }
 
+/* =========================================
+   FIX TEXT INSIDE
+========================================= */
+
+.card *,
 .glass *,
-.card * {
+.menu *,
+.nav *,
+.hero *,
+.section * {
   color: inherit;
 }
 
-/* ===== BUTTON ===== */
+/* =========================================
+   BUTTON
+========================================= */
 
 .cta-group {
   margin-top: 1.25rem;
@@ -325,7 +390,7 @@ h1 span {
 }
 
 .btn {
-  padding: 0.7rem 1rem;
+  padding: 0.75rem 1rem;
 
   border-radius: 10px;
 
@@ -364,7 +429,9 @@ h1 span {
   color: var(--text);
 }
 
-/* ===== PROJECT ===== */
+/* =========================================
+   PROJECT
+========================================= */
 
 .project-card a {
   color: var(--primary);
@@ -374,7 +441,9 @@ h1 span {
   font-weight: 600;
 }
 
-/* ===== CONTACT ===== */
+/* =========================================
+   CONTACT
+========================================= */
 
 .contact {
   display: grid;
@@ -396,17 +465,29 @@ h1 span {
   font-weight: 500;
 }
 
+/* =========================================
+   INPUT
+========================================= */
+
+input,
+textarea,
+button,
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 input,
 textarea {
   width: 100%;
 
-  background: #0b1220;
+  background: #0b1220 !important;
 
   border: 1px solid #334155;
 
   border-radius: 10px;
 
-  color: var(--text);
+  color: #f8fafc !important;
 
   padding: 0.7rem;
 
@@ -438,7 +519,9 @@ textarea {
   font-size: 0.95rem;
 }
 
-/* ===== FOOTER ===== */
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer {
   text-align: center;
@@ -450,7 +533,9 @@ textarea {
   border-top: 1px solid #1e293b;
 }
 
-/* ===== ANIMATION ===== */
+/* =========================================
+   ANIMATION
+========================================= */
 
 [data-animate] {
   opacity: 1;
@@ -472,7 +557,9 @@ textarea {
   transform: translateY(0);
 }
 
-/* ===== KEYFRAMES ===== */
+/* =========================================
+   KEYFRAMES
+========================================= */
 
 @keyframes float {
   0%,
@@ -497,7 +584,9 @@ textarea {
   }
 }
 
-/* ===== TABLET ===== */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1024px) {
 
@@ -511,12 +600,21 @@ textarea {
   }
 }
 
-/* ===== MOBILE ===== */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
 
   body {
     font-size: 15px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        #020617,
+        #0f172a
+      );
   }
 
   .hero {
@@ -569,15 +667,15 @@ textarea {
     top: 4rem;
     right: 0;
 
-    background: rgba(15, 23, 42, 0.96);
+    width: 220px;
+
+    background: rgba(15, 23, 42, 0.98);
 
     border: 1px solid #334155;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     flex-direction: column;
-
-    width: 220px;
 
     padding: 1rem;
 
@@ -588,6 +686,19 @@ textarea {
 
   .menu.open {
     display: flex;
+  }
+
+  .glass {
+    background: rgba(15, 23, 42, 0.9);
+  }
+
+  .card {
+    background:
+      linear-gradient(
+        160deg,
+        rgba(30, 41, 59, 0.98),
+        rgba(15, 23, 42, 0.95)
+      );
   }
 
   .card {
@@ -602,11 +713,13 @@ textarea {
     width: 180px;
     height: 180px;
 
-    opacity: 0.2;
+    opacity: 0.18;
   }
 }
 
-/* ===== REDUCE MOTION ===== */
+/* =========================================
+   REDUCE MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
