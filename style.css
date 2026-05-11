@@ -9,10 +9,9 @@
   --max-width: 1080px;
 }
 
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -20,8 +19,15 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Inter", sans-serif;
-  background: radial-gradient(circle at top right, #1e293b 0%, #020617 46%, #020617 100%);
+  background:
+    radial-gradient(
+      circle at top right,
+      #1e293b 0%,
+      #020617 46%,
+      #020617 100%
+    );
   color: var(--text);
   line-height: 1.6;
   position: relative;
@@ -35,7 +41,7 @@ img {
   display: block;
 }
 
-/* ===== BACKGROUND ORB ===== */
+/* ===== BACKGROUND EFFECT ===== */
 .bg-orb {
   position: fixed;
   width: 320px;
@@ -66,7 +72,7 @@ img {
   margin: 0 auto;
 }
 
-/* ===== GLASS EFFECT ===== */
+/* ===== GLASS ===== */
 .glass {
   backdrop-filter: blur(8px);
   background: rgba(15, 23, 42, 0.45);
@@ -103,6 +109,8 @@ img {
   display: flex;
   list-style: none;
   gap: 1.2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .menu a {
@@ -147,7 +155,8 @@ img {
 
 h1 {
   font-size: clamp(2rem, 4vw, 3.4rem);
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+  line-height: 1.2;
 }
 
 h1 span {
@@ -157,7 +166,6 @@ h1 span {
 .lead {
   color: var(--muted);
   max-width: 58ch;
-  margin-bottom: 1rem;
 }
 
 /* ===== SECTION ===== */
@@ -190,9 +198,10 @@ h1 span {
   border: 1px solid #334155;
   border-radius: 16px;
   padding: 1.2rem;
-  transition: transform 0.28s ease,
-              box-shadow 0.28s ease,
-              border-color 0.28s ease;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 }
 
 .card:hover {
@@ -216,8 +225,9 @@ h1 span {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: transform 0.22s ease,
-              box-shadow 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 .btn:hover {
@@ -269,8 +279,9 @@ textarea {
   border-radius: 10px;
   color: var(--text);
   padding: 0.7rem;
-  transition: border-color 0.2s ease,
-              box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 input:focus,
@@ -308,8 +319,9 @@ textarea {
 .js [data-animate] {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.65s ease,
-              transform 0.65s ease;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
 }
 
 .js [data-animate].in-view {
@@ -319,7 +331,8 @@ textarea {
 
 /* ===== KEYFRAMES ===== */
 @keyframes float {
-  0%,100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
 
@@ -342,7 +355,6 @@ textarea {
 
 /* ===== TABLET ===== */
 @media (max-width: 900px) {
-
   .hero-content,
   .skills-grid,
   .project-grid,
@@ -355,7 +367,7 @@ textarea {
   }
 
   .lead {
-    margin: 0 auto 1rem;
+    margin: 0 auto;
   }
 
   .cta-group {
@@ -392,7 +404,8 @@ textarea {
     position: absolute;
     top: 3.8rem;
     right: 0;
-    background: #0b1220;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(10px);
     border: 1px solid #334155;
     border-radius: 10px;
     flex-direction: column;
@@ -407,10 +420,10 @@ textarea {
 
   h1 {
     font-size: clamp(2rem, 8vw, 3rem);
-    line-height: 1.2;
   }
 
   .lead {
+    max-width: 100%;
     font-size: 0.95rem;
   }
 
