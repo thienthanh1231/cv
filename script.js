@@ -19,19 +19,39 @@ menuToggle?.addEventListener('click', () => {
    CONTACT FORM
 ========================== */
 
-const form = document.querySelector('#contactForm');
-const formNote = document.querySelector('#formNote');
+/* ==========================
+   EMAILJS CONTACT FORM
+========================== */
 
-form?.addEventListener('submit', (event) => {
-  event.preventDefault();
+emailjs.init("9LWR0yK5BmxEXUHkC");
 
-  const data = new FormData(form);
-  const name = (data.get('name') || 'bạn').toString().trim();
+const form = document.getElementById("contactForm");
+const formNote = document.getElementById("formNote");
 
-  formNote.textContent =
-    `Cảm ơn ${name}, mình đã nhận được liên hệ của bạn!`;
+form?.addEventListener("submit", function (e) {
 
-  form.reset();
+  e.preventDefault();
+
+  formNote.textContent = "⏳ Đang gửi...";
+
+  emailjs.sendForm(
+    "service_2omhc7r",
+    "template_gurpb3c",
+    this
+  )
+  .then(() => {
+
+    formNote.textContent = "✅ Gửi liên hệ thành công!";
+    form.reset();
+
+  })
+  .catch((error) => {
+
+    console.error(error);
+    formNote.textContent = "❌ Gửi thất bại. Vui lòng thử lại.";
+
+  });
+
 });
 
 /* ==========================
