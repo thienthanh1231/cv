@@ -1,902 +1,776 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>CV & Portfolio | Nguyễn Trần Thiện Thanh</title>
+  <title>CV & Portfolio | Nguyễn Trần Thiện Thanh</title>
 
-    <meta
-      name="description"
-      content="Trang CV và portfolio cá nhân của Nguyễn Trần Thiện Thanh - Digital Marketing"
-    />
+  <meta
+    name="description"
+    content="Trang CV và portfolio cá nhân của Nguyễn Trần Thiện Thanh - Digital Marketing"
+  />
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
+<body>
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="hero" id="top">
+
+    <nav class="nav container glass">
+
+      <a class="logo" href="#top">
+        Nguyễn Trần Thiện Thanh
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Mở menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <ul class="menu" id="mainMenu">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#designs">Thiết kế</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+
+    </nav>
+
 
     <!-- =========================
-         BACKGROUND
+         HERO
     ========================== -->
 
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
+    <div class="hero-content container">
 
+      <div class="hero-text" data-animate>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+        <p class="tag">
+          Digital Marketing • Growth Strategist
+        </p>
 
-    <header class="hero" id="top">
+        <h1>
+          Xin chào, mình là
+          <span>Nguyễn Trần Thiện Thanh</span>
+        </h1>
 
-      <!-- NAVBAR -->
+        <p class="lead">
+          Mình xây dựng chiến lược marketing số, tối ưu chuyển đổi
+          và phát triển thương hiệu trên đa nền tảng.
+        </p>
 
-      <nav class="nav container glass" data-animate>
+        <div class="cta-group">
 
-        <a class="logo" href="#top">
-          Nguyễn Trần Thiện Thanh
-        </a>
+          <div class="dropdown">
 
-        <button
-          class="menu-toggle"
-          aria-label="Mở menu"
-          type="button"
-        >
-          ☰
-        </button>
+            <button
+              class="btn primary"
+              id="caseBtn"
+              type="button"
+            >
+              Xem Chiến Dịch
+            </button>
 
-        <ul class="menu">
+            <div class="dropdown-content" id="caseMenu">
 
-          <li>
-            <a href="#about">Giới thiệu</a>
-          </li>
-
-          <li>
-            <a href="#skills">Kỹ năng</a>
-          </li>
-
-          <li>
-            <a href="#designs">Thiết kế</a>
-          </li>
-
-          <li>
-            <a href="#projects">Dự án</a>
-          </li>
-
-          <li>
-            <a href="#contact">Liên hệ</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-      <!-- HERO CONTENT -->
-
-      <div class="hero-content container">
-
-        <div class="hero-text" data-animate>
-
-          <p class="tag">
-            Digital Marketing • Growth Strategist
-          </p>
-
-          <h1>
-            Xin chào, mình là
-            <span>Nguyễn Trần Thiện Thanh</span>
-          </h1>
-
-          <p class="lead">
-            Mình xây dựng chiến lược marketing số, tối ưu chuyển đổi
-            và phát triển thương hiệu trên đa nền tảng.
-          </p>
-
-
-          <!-- CTA -->
-
-          <div class="cta-group">
-
-            <!-- CASE STUDY DROPDOWN -->
-
-            <div class="dropdown">
-
-              <a
-                href="#"
-                class="btn primary"
-                id="caseBtn"
-              >
-                Xem Chiến Dịch
+              <a href="case-study.html">
+                🚀 Case Study TikTok 2M+ Views
               </a>
 
-
-              <div
-                class="dropdown-content"
-                id="caseMenu"
-              >
-
-                <a href="case-study.html">
-                  🚀 Case Study TikTok 2M+ Views
-                </a>
-
-                <a href="case-study-2.html">
-                  🔥 Case Study TikTok 155K+ Views
-                </a>
-
-              </div>
+              <a href="case-study-2.html">
+                🔥 Case Study TikTok 155K+ Views
+              </a>
 
             </div>
 
-
-            <!-- CONTACT -->
-
-            <a
-              class="btn ghost"
-              href="#contact"
-            >
-              Liên hệ ngay
-            </a>
-
           </div>
 
-        </div>
-
-
-        <!-- PROFILE CARD -->
-
-        <div
-          class="card profile-card"
-          data-animate
-        >
-
-          <h2>
-            Thông tin nhanh
-          </h2>
-
-          <ul>
-
-            <li>
-              <strong>Vị trí:</strong>
-              Digital Marketing Specialist
-            </li>
-
-            <li>
-              <strong>Kinh nghiệm:</strong>
-              1+ năm
-            </li>
-
-            <li>
-              <strong>Email:</strong>
-              contactjob.thienthanh@gmail.com
-            </li>
-
-            <li>
-              <strong>Địa điểm:</strong>
-              TP. Hồ Chí Minh
-            </li>
-
-          </ul>
+          <a
+            class="btn ghost"
+            href="#contact"
+          >
+            Liên hệ ngay
+          </a>
 
         </div>
 
       </div>
 
-    </header>
 
+      <div class="card profile-card" data-animate>
+
+        <h2>Thông tin nhanh</h2>
+
+        <ul>
+
+          <li>
+            <strong>Vị trí:</strong>
+            Digital Marketing Specialist
+          </li>
+
+          <li>
+            <strong>Kinh nghiệm:</strong>
+            1+ năm
+          </li>
+
+          <li>
+            <strong>Email:</strong>
+            contactjob.thienthanh@gmail.com
+          </li>
+
+          <li>
+            <strong>Địa điểm:</strong>
+            TP. Hồ Chí Minh
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section
+      class="section container"
+      id="about"
+    >
+
+      <h2 data-animate>
+        Giới thiệu bản thân
+      </h2>
+
+      <p data-animate>
+        Mình là chuyên viên Digital Marketing tập trung vào Performance,
+        Content và Branding. Mình yêu thích phân tích dữ liệu, tối ưu chiến
+        dịch và liên tục cập nhật xu hướng digital mới.
+      </p>
+
+    </section>
 
 
     <!-- =========================
-         MAIN
+         SKILLS
     ========================== -->
 
-    <main>
+    <section
+      class="section alt"
+      id="skills"
+    >
 
-
-      <!-- =========================
-           ABOUT
-      ========================== -->
-
-      <section
-        class="section container"
-        id="about"
-      >
+      <div class="container">
 
         <h2 data-animate>
-          Giới thiệu bản thân
+          Kỹ năng nổi bật
         </h2>
 
-        <p data-animate>
-          Mình là chuyên viên Digital Marketing tập trung vào
-          Performance, Content và Branding. Mình yêu thích phân tích
-          dữ liệu, tối ưu chiến dịch và liên tục cập nhật xu hướng
-          digital mới.
-        </p>
+        <div class="grid skills-grid">
 
-      </section>
+          <article class="card" data-animate>
 
+            <h3>
+              Performance Marketing
+            </h3>
 
+            <p>
+              Facebook Ads, Google Ads, TikTok Ads,
+              tối ưu CPA/CPL/ROAS
+            </p>
 
-      <!-- =========================
-           SKILLS
-      ========================== -->
-
-      <section
-        class="section alt"
-        id="skills"
-      >
-
-        <div class="container">
-
-          <h2 data-animate>
-            Kỹ năng nổi bật
-          </h2>
+          </article>
 
 
-          <div class="grid skills-grid">
+          <article class="card" data-animate>
+
+            <h3>
+              Content & Social
+            </h3>
+
+            <p>
+              Content planning, social media management,
+              short video strategy
+            </p>
+
+          </article>
 
 
-            <!-- SKILL 1 -->
+          <article class="card" data-animate>
 
-            <article
-              class="card"
-              data-animate
-            >
+            <h3>
+              Tools & Analytics
+            </h3>
 
-              <h3>
-                Performance Marketing
-              </h3>
+            <p>
+              GA4, Google Tag Manager, Looker Studio,
+              Meta Business Suite
+            </p>
 
-              <p>
-                Facebook Ads, Google Ads, TikTok Ads,
-                tối ưu CPA/CPL/ROAS.
-              </p>
-
-            </article>
-
-
-            <!-- SKILL 2 -->
-
-            <article
-              class="card"
-              data-animate
-            >
-
-              <h3>
-                Content & Social
-              </h3>
-
-              <p>
-                Content planning, social media management,
-                short video strategy.
-              </p>
-
-            </article>
-
-
-            <!-- SKILL 3 -->
-
-            <article
-              class="card"
-              data-animate
-            >
-
-              <h3>
-                Tools & Analytics
-              </h3>
-
-              <p>
-                GA4, Google Tag Manager, Looker Studio,
-                Meta Business Suite.
-              </p>
-
-            </article>
-
-          </div>
+          </article>
 
         </div>
 
-      </section>
+      </div>
+
+    </section>
 
 
+    <!-- ==================================================
+         SẢN PHẨM THIẾT KẾ
+    =================================================== -->
 
-      <!-- =================================================
-           SẢN PHẨM THIẾT KẾ
-      ================================================== -->
+    <section
+      class="section container"
+      id="designs"
+    >
 
-      <section
-        class="section container"
-        id="designs"
+      <div
+        class="section-heading"
+        data-animate
       >
 
-        <!-- TITLE -->
+        <p class="tag">
+          CREATIVE PORTFOLIO
+        </p>
 
-        <div
-          class="section-heading"
+        <h2>
+          Sản phẩm thiết kế
+        </h2>
+
+        <p>
+          Một số sản phẩm thiết kế tiêu biểu trong quá trình
+          làm việc, từ poster sự kiện, quảng cáo sản phẩm
+          đến thiết kế menu.
+        </p>
+
+      </div>
+
+
+      <!-- FILTER -->
+
+      <div
+        class="design-filter"
+        data-animate
+      >
+
+        <button
+          class="design-filter-btn active"
+          type="button"
+          data-filter="all"
+        >
+          Tất cả
+        </button>
+
+        <button
+          class="design-filter-btn"
+          type="button"
+          data-filter="poster"
+        >
+          Poster
+        </button>
+
+        <button
+          class="design-filter-btn"
+          type="button"
+          data-filter="banner"
+        >
+          Banner
+        </button>
+
+        <button
+          class="design-filter-btn"
+          type="button"
+          data-filter="menu"
+        >
+          Menu
+        </button>
+
+        <button
+          class="design-filter-btn"
+          type="button"
+          data-filter="branding"
+        >
+          Branding
+        </button>
+
+      </div>
+
+
+      <!-- GALLERY -->
+
+      <div
+        class="design-grid"
+        id="designGrid"
+      >
+
+
+        <!-- PRODUCT 1 -->
+
+        <article
+          class="design-card design-card-large"
+          data-category="banner"
           data-animate
         >
 
-          <p class="tag">
-            CREATIVE PORTFOLIO
+          <button
+            class="design-image"
+            type="button"
+            data-image="images/design-01.png"
+            data-title="Thiết kế quảng cáo sản phẩm"
+            data-category="Banner"
+            aria-label="Xem lớn Thiết kế quảng cáo sản phẩm"
+          >
+
+            <img
+              src="images/design-01.png"
+              alt="Thiết kế quảng cáo sản phẩm"
+              loading="lazy"
+            />
+
+            <div class="design-overlay">
+
+              <span class="design-category">
+                BANNER
+              </span>
+
+              <strong>
+                Thiết kế quảng cáo sản phẩm
+              </strong>
+
+              <small>
+                Social Media Design • Nhấn để xem full
+              </small>
+
+            </div>
+
+          </button>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article
+          class="design-card"
+          data-category="poster"
+          data-animate
+        >
+
+          <button
+            class="design-image"
+            type="button"
+            data-image="images/design-02.jpg"
+            data-title="Poster sự kiện thể thao"
+            data-category="Poster"
+            aria-label="Xem lớn Poster sự kiện thể thao"
+          >
+
+            <img
+              src="images/design-02.jpg"
+              alt="Poster sự kiện Việt Nam - Thái Lan"
+              loading="lazy"
+            />
+
+            <div class="design-overlay">
+
+              <span class="design-category">
+                POSTER
+              </span>
+
+              <strong>
+                Poster sự kiện thể thao
+              </strong>
+
+              <small>
+                Thiết kế truyền thông • Nhấn để xem full
+              </small>
+
+            </div>
+
+          </button>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article
+          class="design-card"
+          data-category="menu"
+          data-animate
+        >
+
+          <button
+            class="design-image"
+            type="button"
+            data-image="images/design-03.jpg"
+            data-title="Thiết kế menu nhà hàng"
+            data-category="Menu"
+            aria-label="Xem lớn Thiết kế menu nhà hàng"
+          >
+
+            <img
+              src="images/design-03.jpg"
+              alt="Thiết kế menu nhà hàng"
+              loading="lazy"
+            />
+
+            <div class="design-overlay">
+
+              <span class="design-category">
+                MENU
+              </span>
+
+              <strong>
+                Thiết kế menu nhà hàng
+              </strong>
+
+              <small>
+                Thiết kế F&B • Nhấn để xem full
+              </small>
+
+            </div>
+
+          </button>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section
+      class="section container"
+      id="projects"
+    >
+
+      <h2 data-animate>
+        Dự án tiêu biểu
+      </h2>
+
+
+      <div class="grid project-grid">
+
+
+        <article
+          class="card project-card featured-project"
+          data-animate
+        >
+
+          <div class="project-badge">
+            🔥 VIRAL TIKTOK 2M+ VIEWS
+          </div>
+
+          <h3>
+            Video TikTok Đạt Hơn 2 Triệu Lượt Xem
+          </h3>
+
+          <p>
+            Chiến dịch nội dung TikTok cho ngành in ấn quảng cáo,
+            đạt hơn 2 triệu lượt xem tự nhiên, giúp tăng mạnh
+            độ nhận diện thương hiệu và thu hút khách hàng tiềm năng.
           </p>
 
+          <ul class="project-metrics">
+
+            <li>
+              ✅ 2.000.000+ lượt xem
+            </li>
+
+            <li>
+              ✅ Viral Content Marketing
+            </li>
+
+            <li>
+              ✅ Tăng nhận diện thương hiệu
+            </li>
+
+            <li>
+              ✅ Thu hút khách hàng tiềm năng
+            </li>
+
+          </ul>
+
+          <a
+            href="case-study.html"
+            class="project-link"
+          >
+            Xem Case Study →
+          </a>
+
+        </article>
+
+
+        <article
+          class="card project-card featured-project"
+          data-animate
+        >
+
+          <div class="project-badge">
+            🚀 TIKTOK VIRAL 155K+ VIEWS
+          </div>
+
+          <h3>
+            Video TikTok Đạt 155.000+ Lượt Xem
+          </h3>
+
+          <p>
+            Video ngắn tập trung vào sản phẩm in ấn thực tế,
+            sử dụng hook thu hút ngay những giây đầu tiên giúp
+            tăng tương tác tự nhiên và mở rộng độ phủ thương hiệu
+            trên TikTok.
+          </p>
+
+          <ul class="project-metrics">
+
+            <li>
+              ✅ 155.000+ lượt xem
+            </li>
+
+            <li>
+              ✅ Tăng nhận diện thương hiệu
+            </li>
+
+            <li>
+              ✅ Tiếp cận khách hàng tiềm năng
+            </li>
+
+            <li>
+              ✅ Viral Content Marketing
+            </li>
+
+          </ul>
+
+          <a
+            href="case-study-2.html"
+            class="project-link"
+          >
+            Xem Case Study →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+      class="section alt"
+      id="contact"
+    >
+
+      <div class="container contact">
+
+
+        <div data-animate>
+
           <h2>
-            Sản phẩm thiết kế
+            Liên hệ
           </h2>
 
           <p>
-            Một số sản phẩm thiết kế tiêu biểu trong quá trình
-            làm việc, từ ấn phẩm quảng cáo đến nội dung truyền thông
-            và xây dựng hình ảnh thương hiệu.
+            Anh chị nhà tuyển dụng cảm thấy em phù hợp,
+            vui lòng liên hệ.
           </p>
 
         </div>
 
 
-        <!-- FILTER -->
-
-        <div
-          class="design-filter"
+        <form
+          class="card contact-form"
+          id="contactForm"
           data-animate
         >
 
+          <label>
+
+            Họ và tên
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Nguyễn Văn A"
+              required
+            />
+
+          </label>
+
+
+          <label>
+
+            Email
+
+            <input
+              type="email"
+              name="email"
+              placeholder="email@example.com"
+              required
+            />
+
+          </label>
+
+
+          <label>
+
+            Nội dung
+
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Mình mời bạn tham gia..."
+              required
+            ></textarea>
+
+          </label>
+
+
           <button
-            class="design-filter-btn active"
-            data-filter="all"
-            type="button"
+            type="submit"
+            class="btn primary"
           >
-            Tất cả
+            Gửi liên hệ
           </button>
 
-          <button
-            class="design-filter-btn"
-            data-filter="poster"
-            type="button"
-          >
-            Poster
-          </button>
 
-          <button
-            class="design-filter-btn"
-            data-filter="banner"
-            type="button"
-          >
-            Banner
-          </button>
+          <p
+            class="form-note"
+            id="formNote"
+            aria-live="polite"
+          ></p>
 
-          <button
-            class="design-filter-btn"
-            data-filter="standee"
-            type="button"
-          >
-            Standee
-          </button>
+        </form>
 
-          <button
-            class="design-filter-btn"
-            data-filter="branding"
-            type="button"
-          >
-            Branding
-          </button>
+      </div>
 
-        </div>
+    </section>
 
+  </main>
 
-        <!-- DESIGN GRID -->
 
-        <div
-          class="design-grid"
-          id="designGrid"
-        >
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
+  <footer
+    class="footer"
+    data-animate
+  >
 
-          <!-- DESIGN 01 -->
+    <p>
+      © 2026 Nguyễn Trần Thiện Thanh.
+    </p>
 
-          <article
-            class="design-item"
-            data-category="poster"
-            data-animate
-          >
+  </footer>
 
-            <div class="design-image">
 
-              <img
-                src="images/design-01.jpg"
-                alt="Thiết kế Poster quảng cáo"
-                loading="lazy"
-              />
+  <!-- ==================================================
+       IMAGE LIGHTBOX
+  =================================================== -->
 
-              <div class="design-overlay">
+  <div
+    class="image-lightbox"
+    id="imageLightbox"
+    aria-hidden="true"
+  >
 
-                <span>
-                  Poster
-                </span>
-
-                <h3>
-                  Poster quảng cáo
-                </h3>
-
-                <p>
-                  Thiết kế truyền thông
-                </p>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- DESIGN 02 -->
-
-          <article
-            class="design-item"
-            data-category="banner"
-            data-animate
-          >
-
-            <div class="design-image">
-
-              <img
-                src="images/design-02.jpg"
-                alt="Thiết kế Banner quảng cáo"
-                loading="lazy"
-              />
-
-              <div class="design-overlay">
-
-                <span>
-                  Banner
-                </span>
-
-                <h3>
-                  Banner quảng cáo
-                </h3>
-
-                <p>
-                  Social Media Design
-                </p>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- DESIGN 03 -->
-
-          <article
-            class="design-item"
-            data-category="standee"
-            data-animate
-          >
-
-            <div class="design-image">
-
-              <img
-                src="images/design-03.jpg"
-                alt="Thiết kế Standee"
-                loading="lazy"
-              />
-
-              <div class="design-overlay">
-
-                <span>
-                  Standee
-                </span>
-
-                <h3>
-                  Standee quảng cáo
-                </h3>
-
-                <p>
-                  Thiết kế POSM
-                </p>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- DESIGN 04 -->
-
-          <article
-            class="design-item"
-            data-category="branding"
-            data-animate
-          >
-
-            <div class="design-image">
-
-              <img
-                src="images/design-04.jpg"
-                alt="Thiết kế nhận diện thương hiệu"
-                loading="lazy"
-              />
-
-              <div class="design-overlay">
-
-                <span>
-                  Branding
-                </span>
-
-                <h3>
-                  Nhận diện thương hiệu
-                </h3>
-
-                <p>
-                  Brand Identity
-                </p>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- DESIGN 05 -->
-
-          <article
-            class="design-item"
-            data-category="poster"
-            data-animate
-          >
-
-            <div class="design-image">
-
-              <img
-                src="images/design-05.jpg"
-                alt="Thiết kế Poster"
-                loading="lazy"
-              />
-
-              <div class="design-overlay">
-
-                <span>
-                  Poster
-                </span>
-
-                <h3>
-                  Poster truyền thông
-                </h3>
-
-                <p>
-                  Creative Design
-                </p>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- DESIGN 06 -->
-
-          <article
-            class="design-item"
-            data-category="banner"
-            data-animate
-          >
-
-            <div class="design-image">
-
-              <img
-                src="images/design-06.jpg"
-                alt="Thiết kế Social Media Banner"
-                loading="lazy"
-              />
-
-              <div class="design-overlay">
-
-                <span>
-                  Banner
-                </span>
-
-                <h3>
-                  Social Media Banner
-                </h3>
-
-                <p>
-                  Digital Marketing
-                </p>
-
-              </div>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =========================
-           PROJECTS
-      ========================== -->
-
-      <section
-        class="section container"
-        id="projects"
-      >
-
-        <h2 data-animate>
-          Dự án tiêu biểu
-        </h2>
-
-
-        <div class="grid project-grid">
-
-
-          <!-- CASE 1 -->
-
-          <article
-            class="card project-card featured-project"
-            data-animate
-          >
-
-            <div class="project-badge">
-              🔥 VIRAL TIKTOK 2M+ VIEWS
-            </div>
-
-            <h3>
-              Video TikTok Đạt Hơn 2 Triệu Lượt Xem
-            </h3>
-
-            <p>
-              Chiến dịch nội dung TikTok cho ngành in ấn quảng cáo,
-              đạt hơn 2 triệu lượt xem tự nhiên, giúp tăng mạnh độ
-              nhận diện thương hiệu và thu hút khách hàng tiềm năng.
-            </p>
-
-
-            <ul class="project-metrics">
-
-              <li>
-                ✅ 2.000.000+ lượt xem
-              </li>
-
-              <li>
-                ✅ Viral Content Marketing
-              </li>
-
-              <li>
-                ✅ Tăng nhận diện thương hiệu
-              </li>
-
-              <li>
-                ✅ Thu hút khách hàng tiềm năng
-              </li>
-
-            </ul>
-
-
-            <a
-              href="case-study.html"
-              class="project-link"
-            >
-              Xem Case Study →
-            </a>
-
-          </article>
-
-
-
-          <!-- CASE 2 -->
-
-          <article
-            class="card project-card featured-project"
-            data-animate
-          >
-
-            <div class="project-badge">
-              🚀 TIKTOK VIRAL 155K+ VIEWS
-            </div>
-
-            <h3>
-              Video TikTok Đạt 155.000+ Lượt Xem
-            </h3>
-
-            <p>
-              Video ngắn tập trung vào sản phẩm in ấn thực tế,
-              sử dụng hook thu hút ngay những giây đầu tiên giúp
-              tăng tương tác tự nhiên và mở rộng độ phủ thương hiệu
-              trên TikTok.
-            </p>
-
-
-            <ul class="project-metrics">
-
-              <li>
-                ✅ 155.000+ lượt xem
-              </li>
-
-              <li>
-                ✅ Tăng nhận diện thương hiệu
-              </li>
-
-              <li>
-                ✅ Tiếp cận khách hàng tiềm năng
-              </li>
-
-              <li>
-                ✅ Viral Content Marketing
-              </li>
-
-            </ul>
-
-
-            <a
-              href="case-study-2.html"
-              class="project-link"
-            >
-              Xem Case Study →
-            </a>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =========================
-           CONTACT
-      ========================== -->
-
-      <section
-        class="section alt"
-        id="contact"
-      >
-
-        <div class="container contact">
-
-
-          <!-- CONTACT TEXT -->
-
-          <div data-animate>
-
-            <h2>
-              Liên hệ
-            </h2>
-
-            <p>
-              Anh chị nhà tuyển dụng cảm thấy em phù hợp,
-              vui lòng liên hệ.
-            </p>
-
-          </div>
-
-
-          <!-- CONTACT FORM -->
-
-          <form
-            class="card contact-form"
-            id="contactForm"
-            data-animate
-          >
-
-
-            <label>
-
-              Họ và tên
-
-              <input
-                type="text"
-                name="name"
-                placeholder="Nguyễn Văn A"
-                required
-              />
-
-            </label>
-
-
-            <label>
-
-              Email
-
-              <input
-                type="email"
-                name="email"
-                placeholder="email@example.com"
-                required
-              />
-
-            </label>
-
-
-            <label>
-
-              Nội dung
-
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Mình mời bạn tham gia..."
-                required
-              ></textarea>
-
-            </label>
-
-
-            <button
-              type="submit"
-              class="btn primary"
-            >
-              Gửi liên hệ
-            </button>
-
-
-            <p
-              class="form-note"
-              id="formNote"
-              aria-live="polite"
-            ></p>
-
-          </form>
-
-        </div>
-
-      </section>
-
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer
-      class="footer"
-      data-animate
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      type="button"
+      aria-label="Đóng ảnh"
     >
-
-      <p>
-        © 2026 Nguyễn Trần Thiện Thanh.
-      </p>
-
-    </footer>
+      ×
+    </button>
 
 
+    <button
+      class="lightbox-prev"
+      id="lightboxPrev"
+      type="button"
+      aria-label="Ảnh trước"
+    >
+      ‹
+    </button>
 
-    <!-- =========================
-         EMAILJS
-    ========================== -->
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
+    <div class="lightbox-inner">
+
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+      />
+
+      <div class="lightbox-info">
+
+        <span id="lightboxCategory">
+          DESIGN
+        </span>
+
+        <h3 id="lightboxTitle">
+          Sản phẩm thiết kế
+        </h3>
+
+      </div>
+
+    </div>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <button
+      class="lightbox-next"
+      id="lightboxNext"
+      type="button"
+      aria-label="Ảnh tiếp theo"
+    >
+      ›
+    </button>
 
-    <script src="script.js"></script>
+  </div>
 
-  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
