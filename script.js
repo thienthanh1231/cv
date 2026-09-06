@@ -239,371 +239,184 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
    * ==================================================
-   * LIGHTBOX
+   * LIGHTBOX GALLERY THEO TỪNG BỘ
    *
-   * Bấm toàn bộ ô sản phẩm
-   * → mở ảnh full.
-   *
-   * Có:
-   * - ảnh trước
-   * - ảnh sau
-   * - nút X
-   * - click nền để đóng
-   * - phím ESC
-   * - phím ← →
+   * Mỗi card là một bộ thiết kế.
+   * Một bộ có thể có 1, 10 hoặc 100 ảnh.
    * ==================================================
    */
 
-  const lightbox =
-    document.getElementById(
-      "imageLightbox"
-    );
+  const galleryData = {
+    "poster-01": {
+      title: "Poster sự kiện thể thao",
+      category: "Poster",
+      images: [
+        "images/poster/poster-01.jpg"
+        // Thêm ảnh tại đây:
+        // ,"images/poster/poster-02.jpg"
+        // ,"images/poster/poster-03.jpg"
+        // ,"images/poster/poster-04.jpg"
+      ]
+    },
 
-  const lightboxImage =
-    document.getElementById(
-      "lightboxImage"
-    );
+    "banner-01": {
+      title: "Banner quảng cáo sản phẩm",
+      category: "Banner",
+      images: [
+        "images/banner/banner-01.png"
+        // ,"images/banner/banner-02.png"
+      ]
+    },
 
-  const lightboxTitle =
-    document.getElementById(
-      "lightboxTitle"
-    );
+    "menu-01": {
+      title: "Thiết kế menu nhà hàng",
+      category: "Menu",
+      images: [
+        "images/menu/menu-01.jpg"
+        // ,"images/menu/menu-02.jpg"
+      ]
+    }
+  };
 
-  const lightboxCategory =
-    document.getElementById(
-      "lightboxCategory"
-    );
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxTitle = document.getElementById("lightboxTitle");
+  const lightboxCategory = document.getElementById("lightboxCategory");
+  const lightboxCounter = document.getElementById("lightboxCounter");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxPrev = document.getElementById("lightboxPrev");
+  const lightboxNext = document.getElementById("lightboxNext");
 
-  const lightboxClose =
-    document.getElementById(
-      "lightboxClose"
-    );
+  const galleryButtons = Array.from(
+    document.querySelectorAll(".design-image[data-gallery-id]")
+  );
 
-  const lightboxPrev =
-    document.getElementById(
-      "lightboxPrev"
-    );
-
-  const lightboxNext =
-    document.getElementById(
-      "lightboxNext"
-    );
-
-
-  const imageButtons =
-    Array.from(
-      document.querySelectorAll(
-        ".design-image[data-image]"
-      )
-    );
-
-
+  let currentGallery = null;
   let currentIndex = 0;
 
+  // Tự cập nhật số lượng ảnh trên từng card
+  galleryButtons.forEach((button) => {
+    const gallery = galleryData[button.dataset.galleryId];
+    const countElement = button.querySelector(".design-count");
 
-  /*
-   * Mở ảnh
-   */
-
-  function openLightbox(index) {
-
-    if (
-      !imageButtons.length ||
-      !lightbox
-    ) {
-      return;
+    if (gallery && countElement) {
+      countElement.textContent = `${gallery.images.length} ${gallery.images.length === 1 ? "thiết kế" : "thiết kế"}`;
     }
+  });
 
+  function updateLightbox() {
+    if (!currentGallery || !currentGallery.images.length) return;
 
-    /*
-     * Đảm bảo index hợp lệ
-     */
-
-    currentIndex =
-      (
-        index +
-        imageButtons.length
-      ) %
-      imageButtons.length;
-
-
-    const button =
-      imageButtons[currentIndex];
-
-
-    const src =
-      button.dataset.image;
-
-
-    const title =
-      button.dataset.title ||
-      "Sản phẩm thiết kế";
-
-
-    const category =
-      button.dataset.category ||
-      "Design";
-
-
-    /*
-     * QUAN TRỌNG:
-     * dùng đường dẫn ảnh gốc
-     * chứ không lấy ảnh thumbnail.
-     */
+    const src = currentGallery.images[currentIndex];
 
     lightboxImage.src = src;
+    lightboxImage.alt = currentGallery.title;
+    lightboxTitle.textContent = currentGallery.title;
+    lightboxCategory.textContent = currentGallery.category.toUpperCase();
 
-    lightboxImage.alt = title;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.images.length}`;
+    }
 
-    lightboxTitle.textContent =
-      title;
+    const multiple = currentGallery.images.length > 1;
+    lightboxPrev.hidden = !multiple;
+    lightboxNext.hidden = !multiple;
 
-    lightboxCategory.textContent =
-      category.toUpperCase();
+    if (multiple) {
+      new Image().src = currentGallery.images[
+        (currentIndex + 1) % currentGallery.images.length
+      ];
+      new Image().src = currentGallery.images[
+        (currentIndex - 1 + currentGallery.images.length) % currentGallery.images.length
+      ];
+    }
+  }
 
+  function openGallery(galleryId, index = 0) {
+    const gallery = galleryData[galleryId];
+    if (!gallery || !gallery.images.length || !lightbox) return;
+
+    currentGallery = gallery;
+    currentIndex = Math.max(0, Math.min(index, gallery.images.length - 1));
+    updateLightbox();
 
     lightbox.classList.add("active");
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-    document.body.classList.add(
-      "lightbox-open"
-    );
-
-
-    /*
-     * preload ảnh
-     */
-
-    const preload =
-      new Image();
-
-    preload.src = src;
-
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
   }
-
-
-  /*
-   * Đóng ảnh
-   */
 
   function closeLightbox() {
+    if (!lightbox) return;
 
-    if (!lightbox) {
-      return;
-    }
-
-
-    lightbox.classList.remove(
-      "active"
-    );
-
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-    document.body.classList.remove(
-      "lightbox-open"
-    );
-
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-open");
 
     setTimeout(() => {
-
-      if (
-        !lightbox.classList.contains(
-          "active"
-        )
-      ) {
-
+      if (!lightbox.classList.contains("active")) {
         lightboxImage.src = "";
-
       }
-
     }, 200);
-
   }
-
-
-  /*
-   * Ảnh trước
-   */
 
   function previousImage() {
-
-    openLightbox(
-      currentIndex - 1
-    );
-
+    if (!currentGallery || currentGallery.images.length < 2) return;
+    currentIndex = (currentIndex - 1 + currentGallery.images.length) % currentGallery.images.length;
+    updateLightbox();
   }
-
-
-  /*
-   * Ảnh sau
-   */
 
   function nextImage() {
-
-    openLightbox(
-      currentIndex + 1
-    );
-
+    if (!currentGallery || currentGallery.images.length < 2) return;
+    currentIndex = (currentIndex + 1) % currentGallery.images.length;
+    updateLightbox();
   }
 
+  galleryButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      openGallery(button.dataset.galleryId);
+    });
+  });
 
-  /*
-   * CLICK VÀO CARD / ẢNH
-   */
+  lightboxClose?.addEventListener("click", closeLightbox);
 
-  imageButtons.forEach(
-    (button, index) => {
+  lightboxPrev?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    previousImage();
+  });
 
-      button.addEventListener(
-        "click",
-        (event) => {
+  lightboxNext?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    nextImage();
+  });
 
-          event.preventDefault();
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
 
-          openLightbox(index);
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox?.classList.contains("active")) return;
 
-        }
-      );
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") previousImage();
+    if (event.key === "ArrowRight") nextImage();
+  });
 
-    }
-  );
+  // Vuốt trái/phải trên điện thoại
+  let touchStartX = 0;
 
+  lightbox?.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+  }, { passive: true });
 
-  /*
-   * Nút X
-   */
+  lightbox?.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].screenX;
+    const distance = touchEndX - touchStartX;
 
-  if (lightboxClose) {
-
-    lightboxClose.addEventListener(
-      "click",
-      closeLightbox
-    );
-
-  }
-
-
-  /*
-   * Nút trái
-   */
-
-  if (lightboxPrev) {
-
-    lightboxPrev.addEventListener(
-      "click",
-      (event) => {
-
-        event.stopPropagation();
-
-        previousImage();
-
-      }
-    );
-
-  }
-
-
-  /*
-   * Nút phải
-   */
-
-  if (lightboxNext) {
-
-    lightboxNext.addEventListener(
-      "click",
-      (event) => {
-
-        event.stopPropagation();
-
-        nextImage();
-
-      }
-    );
-
-  }
-
-
-  /*
-   * Click vùng nền đen
-   */
-
-  if (lightbox) {
-
-    lightbox.addEventListener(
-      "click",
-      (event) => {
-
-        if (
-          event.target === lightbox
-        ) {
-
-          closeLightbox();
-
-        }
-
-      }
-    );
-
-  }
-
-
-  /*
-   * Phím ESC + ← →
-   */
-
-  document.addEventListener(
-    "keydown",
-    (event) => {
-
-      if (
-        !lightbox ||
-        !lightbox.classList.contains(
-          "active"
-        )
-      ) {
-        return;
-      }
-
-
-      if (
-        event.key === "Escape"
-      ) {
-
-        closeLightbox();
-
-      }
-
-
-      if (
-        event.key === "ArrowLeft"
-      ) {
-
-        previousImage();
-
-      }
-
-
-      if (
-        event.key === "ArrowRight"
-      ) {
-
-        nextImage();
-
-      }
-
-    }
-  );
-
+    if (Math.abs(distance) < 50) return;
+    if (distance < 0) nextImage();
+    else previousImage();
+  }, { passive: true });
 
   /*
    * ==================================================
