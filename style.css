@@ -942,3 +942,160 @@ textarea {
     scroll-behavior: auto !important;
   }
 }
+/* =========================================
+   CLICK PRODUCT → VIEW FULL IMAGE
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Tạo lightbox
+  const lightbox = document.createElement("div");
+
+  lightbox.className = "image-lightbox";
+
+  lightbox.innerHTML = `
+    <button
+      class="image-lightbox-close"
+      aria-label="Đóng ảnh"
+      type="button"
+    >
+      ×
+    </button>
+
+    <img
+      class="image-lightbox-img"
+      src=""
+      alt=""
+    />
+  `;
+
+  document.body.appendChild(lightbox);
+
+  const lightboxImg =
+    lightbox.querySelector(".image-lightbox-img");
+
+  const closeButton =
+    lightbox.querySelector(".image-lightbox-close");
+
+
+  /*
+   * Tìm tất cả sản phẩm trong gallery
+   *
+   * Hỗ trợ nhiều kiểu class khác nhau
+   * để không phụ thuộc quá nhiều vào HTML.
+   */
+
+  const products = document.querySelectorAll(
+    ".design-item, .design-card, .design-grid > article"
+  );
+
+
+  products.forEach((product) => {
+
+    product.addEventListener("click", (event) => {
+
+      // Không xử lý khi click vào link/button chức năng khác
+      if (
+        event.target.closest("a") &&
+        !event.target.closest(".design-image")
+      ) {
+        return;
+      }
+
+      /*
+       * Tìm ảnh bên trong sản phẩm
+       */
+      const image = product.querySelector("img");
+
+      if (!image) {
+        return;
+      }
+
+      /*
+       * Lấy đường dẫn ảnh gốc
+       */
+      const imageSrc =
+        image.dataset.full ||
+        image.dataset.src ||
+        image.getAttribute("src");
+
+      if (!imageSrc) {
+        return;
+      }
+
+      /*
+       * Nếu ảnh bị lỗi thì không mở
+       */
+      if (image.complete && image.naturalWidth === 0) {
+        console.warn("Không tìm thấy ảnh:", imageSrc);
+        return;
+      }
+
+      /*
+       * Hiển thị ảnh
+       */
+      lightboxImg.src = imageSrc;
+
+      lightboxImg.alt =
+        image.alt || "Sản phẩm thiết kế";
+
+      lightbox.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+    });
+
+  });
+
+
+  /*
+   * Đóng lightbox
+   */
+
+  function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+    setTimeout(() => {
+      lightboxImg.src = "";
+    }, 250);
+  }
+
+
+  // Nút X
+  closeButton.addEventListener(
+    "click",
+    closeLightbox
+  );
+
+
+  // Click vùng nền đen
+  lightbox.addEventListener(
+    "click",
+    (event) => {
+
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+
+    }
+  );
+
+
+  // Phím ESC
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains("active")
+      ) {
+        closeLightbox();
+      }
+
+    }
+  );
+
+});
