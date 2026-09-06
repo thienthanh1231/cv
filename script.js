@@ -265,6 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
       images: [
         "images/banner/banner-01.png"
         // ,"images/banner/banner-02.png"
+        // ,"images/banner/banner-03.png"
+        // ,"images/banner/banner-04.png"
       ]
     },
 
@@ -274,6 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
       images: [
         "images/menu/menu-01.jpg"
         // ,"images/menu/menu-02.jpg"
+        // ,"images/menu/menu-03.jpg"
+        // ,"images/menu/menu-04.jpg"
       ]
     }
   };
