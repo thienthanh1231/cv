@@ -325,148 +325,46 @@
       </div>
 
 
-      <!-- GALLERY -->
+      <!-- GALLERY: mỗi card là một BỘ thiết kế, có thể chứa nhiều ảnh -->
+      <div class="design-grid" id="designGrid">
 
-      <div
-        class="design-grid"
-        id="designGrid"
-      >
-
-
-        <!-- PRODUCT 1 -->
-
-        <article
-          class="design-card design-card-large"
-          data-category="banner"
-          data-animate
-        >
-
-          <button
-            class="design-image"
-            type="button"
-            data-image="images/design-01.png"
-            data-title="Thiết kế quảng cáo sản phẩm"
-            data-category="Banner"
-            aria-label="Xem lớn Thiết kế quảng cáo sản phẩm"
-          >
-
-            <img
-              src="images/design-01.png"
-              alt="Thiết kế quảng cáo sản phẩm"
-              loading="lazy"
-            />
-
+        <!-- BỘ POSTER: thêm bao nhiêu ảnh cũng được -->
+        <article class="design-card design-card-large" data-category="poster" data-gallery-id="poster-01" data-animate>
+          <button class="design-image" type="button" data-gallery-id="poster-01" aria-label="Xem bộ Poster sự kiện thể thao">
+            <img src="images/poster/poster-01.jpg" alt="Poster sự kiện thể thao" loading="lazy" />
             <div class="design-overlay">
-
-              <span class="design-category">
-                BANNER
-              </span>
-
-              <strong>
-                Thiết kế quảng cáo sản phẩm
-              </strong>
-
-              <small>
-                Social Media Design • Nhấn để xem full
-              </small>
-
+              <span class="design-category">POSTER</span>
+              <strong>Poster sự kiện thể thao</strong>
+              <small><span class="design-count">1 thiết kế</span> • Nhấn để xem toàn bộ bộ sưu tập</small>
             </div>
-
           </button>
-
         </article>
 
-
-        <!-- PRODUCT 2 -->
-
-        <article
-          class="design-card"
-          data-category="poster"
-          data-animate
-        >
-
-          <button
-            class="design-image"
-            type="button"
-            data-image="images/design-02.jpg"
-            data-title="Poster sự kiện thể thao"
-            data-category="Poster"
-            aria-label="Xem lớn Poster sự kiện thể thao"
-          >
-
-            <img
-              src="images/design-02.jpg"
-              alt="Poster sự kiện Việt Nam - Thái Lan"
-              loading="lazy"
-            />
-
+        <!-- BỘ BANNER -->
+        <article class="design-card" data-category="banner" data-gallery-id="banner-01" data-animate>
+          <button class="design-image" type="button" data-gallery-id="banner-01" aria-label="Xem bộ Banner quảng cáo">
+            <img src="images/banner/banner-01.png" alt="Thiết kế Banner quảng cáo sản phẩm" loading="lazy" />
             <div class="design-overlay">
-
-              <span class="design-category">
-                POSTER
-              </span>
-
-              <strong>
-                Poster sự kiện thể thao
-              </strong>
-
-              <small>
-                Thiết kế truyền thông • Nhấn để xem full
-              </small>
-
+              <span class="design-category">BANNER</span>
+              <strong>Banner quảng cáo sản phẩm</strong>
+              <small><span class="design-count">1 thiết kế</span> • Nhấn để xem toàn bộ bộ sưu tập</small>
             </div>
-
           </button>
-
         </article>
 
-
-        <!-- PRODUCT 3 -->
-
-        <article
-          class="design-card"
-          data-category="menu"
-          data-animate
-        >
-
-          <button
-            class="design-image"
-            type="button"
-            data-image="images/design-03.jpg"
-            data-title="Thiết kế menu nhà hàng"
-            data-category="Menu"
-            aria-label="Xem lớn Thiết kế menu nhà hàng"
-          >
-
-            <img
-              src="images/design-03.jpg"
-              alt="Thiết kế menu nhà hàng"
-              loading="lazy"
-            />
-
+        <!-- BỘ MENU -->
+        <article class="design-card" data-category="menu" data-gallery-id="menu-01" data-animate>
+          <button class="design-image" type="button" data-gallery-id="menu-01" aria-label="Xem bộ thiết kế Menu nhà hàng">
+            <img src="images/menu/menu-01.jpg" alt="Thiết kế Menu nhà hàng" loading="lazy" />
             <div class="design-overlay">
-
-              <span class="design-category">
-                MENU
-              </span>
-
-              <strong>
-                Thiết kế menu nhà hàng
-              </strong>
-
-              <small>
-                Thiết kế F&B • Nhấn để xem full
-              </small>
-
+              <span class="design-category">MENU</span>
+              <strong>Thiết kế menu nhà hàng</strong>
+              <small><span class="design-count">1 thiết kế</span> • Nhấn để xem toàn bộ bộ sưu tập</small>
             </div>
-
           </button>
-
         </article>
-
 
       </div>
-
     </section>
 
 
@@ -746,6 +644,8 @@
         <span id="lightboxCategory">
           DESIGN
         </span>
+
+        <span class="lightbox-counter" id="lightboxCounter">1 / 1</span>
 
         <h3 id="lightboxTitle">
           Sản phẩm thiết kế
