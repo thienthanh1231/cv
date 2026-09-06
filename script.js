@@ -250,7 +250,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "banner-01": {
       title: "Banner quảng cáo sản phẩm",
       category: "Banner",
-      images: ["images/banner/banner-01.png"]
+      images: [
+        "images/banner/banner-01.png"
+        //,"images/banner/banner-02.png"
+        //,"images/banner/banner-03.png"
+      ]
     },
     "menu-01": {
       title: "Thiết kế menu nhà hàng",
